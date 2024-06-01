@@ -83,6 +83,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 							m.board[m.cursor.i][m.cursor.j] = "O"
 							if Terminal(m.board) {
 								m.end = true
+								break
 							}
 							m.turn = Turn(m.turn)
 							Move := MinMax(m.board, m.turn).Move
